@@ -5,12 +5,8 @@ export class Statement {
    constructor(rides:Array<Ride>){
        this.rides=rides;
    }
-   totalFare=()=> {
-       let totalfare:number=0;
-       for(let i=0;i<this.rides.length;i++)
-          totalfare+=this.rides[i].Fare();
-   return totalfare;
-        }; 
+   totalFare=()=> this.rides.reduce(function(total:number,ride:Ride){return total+ride.Fare()},0);
+         
     getNoOfRides=()=>this.rides.length;
     getAvfFarePerRide=()=>this.totalFare()/this.getNoOfRides();    
 }
