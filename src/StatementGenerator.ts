@@ -1,5 +1,5 @@
-export class StatementGenerator{
-    totalFare=(time:number)=>{
-        return 1*time ;
-    }
+export class StatementGenerator {
+  totalFare = (time: number, distance: number): number => {
+    return 1 * time + 10 * distance;
+  };
 }
